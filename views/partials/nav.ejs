@@ -1,0 +1,46 @@
+<style>
+    h2,
+    a {
+        font-family: "Signika Negative", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        color: black;
+    }
+</style>
+<!-- Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full bg-white text-black py-4 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo and Hamburger Wrapper -->
+        <div class="flex items-center space-x-4">
+            <!-- Hamburger Menu -->
+            <img src="https://cdn.pixabay.com/photo/2016/12/17/15/50/logo-1913689_1280.png" alt="logo"
+                class="mx-auto w-8" />
+            <!-- Logo -->
+            <a href="/" class="text-lg font-bold">Everglory</a>
+
+        </div>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-4">
+            <li><a href="/" class="hover:text-gray-800">HOME</a></li>
+            <li><a href="/faqs" class="hover:text-gray-800">FAQs</a></li>
+            <li><a href="/about-us" class="hover:text-gray-800">ABOUT US</a></li>
+            <li><a href="/contact" class="hover:text-gray-800">CONTACT</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript to handle the sidebar toggle
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+
+        document.getElementById('close-btn').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.add('-translate-x-full');
+        });
+    </script>
+</nav>
+
+
+
+<!-- Sidebar -->
