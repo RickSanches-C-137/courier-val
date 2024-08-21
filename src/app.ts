@@ -52,6 +52,18 @@ app.get('/contact', async (req: Request, res: Response) => {
     res.render("contact.ejs")
 });
 
+app.get('/cookie-policy', async (req: Request, res: Response) => {
+    res.render("cookie-policy.ejs")
+});
+
+app.get('/privacy-policy', async (req: Request, res: Response) => {
+    res.render("privacy-policy.ejs")
+});
+
+app.get('/tc', async (req: Request, res: Response) => {
+    res.render("tc.ejs")
+});
+
 app.get('/createp', (req: Request, res: Response) => {
     // const authCookie = req.cookies.auth;
 
