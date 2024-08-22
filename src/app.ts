@@ -153,7 +153,7 @@ app.get('/parcels/:id/edit', async (req, res) => {
             throw new NotFoundException('Parcel not found');
         }
 
-        res.render('editParcel', { parcel });
+        res.render('editparcel', { parcel });
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
