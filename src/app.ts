@@ -78,7 +78,7 @@ app.get('/parcels', async (req: Request, res: Response) => {
         const parcels = await Parcel.find();
 
         // Render the parcels using a view template (e.g., EJS)
-        res.render('parcels.ejs', { parcels });
+        res.render('admin.ejs', { parcels });
     } catch (error) {
         // Handle the error appropriately
         console.error(error);
@@ -209,7 +209,7 @@ app.post('/submit-parcel', (req: Request, res: Response) => {
             sender
         }
         const parcel = Parcel.create(parcelData)
-        return parcel
+        res.redirect('/admin');
     } catch (err) {
         console.log(err)
     }
