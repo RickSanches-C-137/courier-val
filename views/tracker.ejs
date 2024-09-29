@@ -71,7 +71,7 @@
               Shipment Details
             </h2>
             <div class="flex items-center mb-6">
-              <div class="w-12 h-12 bg-blue-500 rounded-full flex-shrink-0 mr-4"></div>
+              <div class="w-12 h-12 bg-gray-500 rounded-full flex-shrink-0 mr-4"></div>
               <div>
                 <h3 class="text-lg font-semibold text-gray-800">
                   Order Received
@@ -82,7 +82,7 @@
               </div>
             </div>
             <div class="flex items-center mb-6">
-              <div class="w-12 h-12 bg-gray-500 rounded-full flex-shrink-0 mr-4"></div>
+              <div class="w-12 h-12 bg-blue-500 rounded-full flex-shrink-0 mr-4"></div>
               <div>
                 <h3 class="text-lg font-semibold text-gray-800">
                   Processing
@@ -129,6 +129,10 @@
                 <%= parcel.itemName %>
               </p>
               <p class="text-gray-700 mb-2">
+                <span class="font-bold">Condition:</span>
+                <%= parcel.currentCondition %>
+              </p>
+              <p class="text-gray-700 mb-2">
                 <span class="font-bold">From:</span>
                 <%= parcel.from %>
               </p>
@@ -148,6 +152,7 @@
                 <span class="font-bold">Current Location:</span>
                 <%= parcel.currentLocation %>
               </p>
+
               <p class="text-gray-700 mb-2">
                 <span class="font-bold">Date:</span>
                 <%= parcel.date %>

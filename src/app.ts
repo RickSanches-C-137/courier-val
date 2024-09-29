@@ -64,6 +64,10 @@ app.get('/tc', async (req: Request, res: Response) => {
     res.render("tc.ejs")
 });
 
+app.get('/testimonials', async (req: Request, res: Response) => {
+    res.render("testimonials.ejs")
+});
+
 app.get('/createp', (req: Request, res: Response) => {
     // const authCookie = req.cookies.auth;
 
@@ -88,15 +92,15 @@ app.get('/parcels', async (req: Request, res: Response) => {
 type ProgressStatus = 'Order Received' | 'Processing' | 'In Transit' | 'Delivered';
 
 const progress: Record<ProgressStatus, number> = {
-    'Order Received': 10,
-    'Processing': 30,
-    'In Transit': 60,
+    'Order Received': 25,
+    'Processing': 45,
+    'In Transit': 70,
     'Delivered': 100,
 };
 
 const colors: Record<ProgressStatus, string> = {
-    'Order Received': 'bg-blue-500',
-    'Processing': 'bg-gray-500',
+    'Order Received': 'bg-gray-500',
+    'Processing': 'bg-blue-500',
     'In Transit': 'bg-yellow-500',
     'Delivered': 'bg-green-500',
 };
@@ -170,6 +174,7 @@ app.post('/parcels/:id/edit', async (req, res) => {
             sender: req.body.sender,
             receiver: req.body.receiver,
             currentLocation: req.body.currentLocation,
+            currentCondition: req.body.currentCondition,
             date: req.body.date,
             status: req.body.status
         };
@@ -195,7 +200,7 @@ app.post('/parcels/:id/delete', async (req, res) => {
 });
 
 app.post('/submit-parcel', (req: Request, res: Response) => {
-    const { itemName, from, to, receiver, sender, currentLocation, date, status } = req.body;
+    const { itemName, from, to, receiver, sender, currentLocation, date, status, currentCondition } = req.body;
 
     try {
         const parcelData = {
@@ -206,7 +211,8 @@ app.post('/submit-parcel', (req: Request, res: Response) => {
             currentLocation,
             date,
             status,
-            sender
+            sender,
+            currentCondition
         }
         const parcel = Parcel.create(parcelData)
         res.redirect('/admin');

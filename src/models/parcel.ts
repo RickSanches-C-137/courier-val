@@ -2,6 +2,7 @@ import { Schema, model } from 'mongoose';
 
 export interface IParcel {
     itemName: string;
+    currentCondition: string;
     from: string;
     to: string;
     receiver: string;
@@ -14,6 +15,7 @@ export interface IParcel {
 }
 const parcelSchema = new Schema<IParcel>({
     itemName: { type: String },
+    currentCondition: { type: String },
     from: { type: String },
     to: { type: String },
     receiver: { type: String },

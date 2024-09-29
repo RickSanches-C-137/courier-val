@@ -52,28 +52,34 @@
 
 
     <!-- Two-Column Section -->
-    <section
-      class="container mx-auto pt-14 mt-14 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8"
-      id="home">
+    <section class="relative flex items-center justify-center h-screen" id="home">
 
-      <!-- Write-up Section -->
-      <div class="w-full md:w-1/2">
-        <h2 class="text-4xl font-bold mb-4 ml-3 md:ml-0">Shipping made easier
-          <br />With <span style="color: #122F35;">Easyship Freight Logistics</span>
+      <!-- Video Background -->
+      <video autoplay muted loop playsinline class="absolute inset-0 object-cover w-full h-full z-0">
+        <source src="https://cdn.pixabay.com/video/2019/05/01/23215-334239340_tiny.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Dark overlay for darkening the background video -->
+      <div class="absolute inset-0 bg-black bg-opacity-50 z-1"></div>
+
+      <!-- Write-up Section centered -->
+      <div class="relative text-center text-white z-10">
+        <h2 class="text-5xl font-bold mb-6 text-white">
+          Shipping made easier<br />With <span style="color: #3377f4;" class="">Easyship Freight
+            Logistics</span>
         </h2>
-        <p class="text-lg mb-4 ml-3 md:ml-0">
+        <p class="text-xl text-white mb-6">
           Safe and Trusted. On time delivery.<br />
           Round the clock support
         </p>
-        <!-- <a href="/login" style="background-color: #4570B4;"
-          class="inline-block text-white px-6 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300">Ship
-          Now</a> -->
-        <button style="color: #122F35; border: 1px solid #122F35;" class="ml-3 md:ml-0 font-bold py-2 px-4 rounded"
+
+        <button style="color: #f4f4f4; border: 1px solid #3377f4;" class="bg-blue-500 font-bold py-3 px-8 rounded"
           id="trackShipmentButton">
           Track Shipment
         </button>
 
-        <!-- Modal -->
+        <!-- Modal (remains hidden until button click) -->
         <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="trackShipmentModal">
           <div class="flex items-center justify-center min-h-screen px-4">
             <div class="fixed inset-0 transition-opacity" aria-hidden="true">
@@ -96,7 +102,8 @@
                       Track Your Shipment
                     </h3>
                     <div class="mt-2">
-                      <input type="text" id="trackingNumber" class="shadow-sm block w-full sm:text-sm rounded-md p-2"
+                      <input type="text" id="trackingNumber"
+                        class="shadow-sm text-black block w-full sm:text-sm rounded-md p-2"
                         style="border: 1px solid #4570B4;" placeholder="Enter Tracking Number">
                     </div>
                   </div>
@@ -116,20 +123,13 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Image Section -->
-      <div class="w-full md:w-1/2">
-        <img src="https://cdn.pixabay.com/photo/2022/01/26/22/43/delivery-6970072_1280.png" alt="home img"
-          class="w-full rounded-lg">
       </div>
-
 
     </section>
 
-
     <!-- Main Content -->
-    <div class="w-full mt-24 mb-24 pt-16 pb-16" style="background-color:#122F35;">
+    <div class="w-full mb-24 pt-16 pb-16" style="background-color:#122F35;">
       <h2 class="text-5xl text-white font-bold text-center mt-10">One Platform, Multiple Services</h2>
       <p class="text-center text-white text-2xl md:mx-44 mt-4">Experience seamless delivery solutions. We offer a range
         of
@@ -270,6 +270,67 @@
             all
             clients</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="bg-gray-100 py-12 mt-5">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">What Our Clients Say</h2>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p class="text-gray-600 italic mb-4">"This service has completely transformed the way I manage my finances.
+              It's reliable, fast, and easy to use. Highly recommended!"</p>
+            <div class="flex items-center">
+              <img class="w-12 h-12 rounded-full object-cover mr-4"
+                src="https://img.freepik.com/free-photo/blonde-employee-looking-camera-white-background_23-2148180706.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1727395200&semt=ais_hybrid"
+                alt="Client photo">
+              <div>
+                <h4 class="font-bold text-gray-800">Jane Doe</h4>
+                <p class="text-sm text-gray-600">Product Manager</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p class="text-gray-600 italic mb-4">"Excellent customer support and seamless transactions. I'm truly
+              impressed with the level of service!"</p>
+            <div class="flex items-center">
+              <img class="w-12 h-12 rounded-full object-cover mr-4"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvhsh_Kwe75BeRWgnDBS7wMG39ZfjZB_ELJA&s"
+                alt="Client photo">
+              <div>
+                <h4 class="font-bold text-gray-800">John Smith</h4>
+                <p class="text-sm text-gray-600">Software Engineer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p class="text-gray-600 italic mb-4">"I love how easy it is to keep track of my transactions. It's intuitive
+              and saves me so much time!"</p>
+            <div class="flex items-center">
+              <img class="w-12 h-12 rounded-full object-cover mr-4"
+                src="https://www.thenation.com/cdn-cgi/image/width=896,quality=80,format=auto/wp-content/uploads/2018/11/Kyla-Schuller-otu-img.jpg"
+                alt="Client photo">
+              <div>
+                <h4 class="font-bold text-gray-800">Emily Johnson</h4>
+                <p class="text-sm text-gray-600">Freelancer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center mt-8">
+          <a href="/testimonials"
+            class="px-6 py-3 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-600 transition duration-300">
+            View More Testimonials
+          </a>
+        </div>
       </div>
     </section>
 
