@@ -15,6 +15,9 @@ app.use(express.json())
 app.use(modules);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, '../public')));
+
 
 const requireLogin = (req, res, next) => {
     const authCookie = req.cookies.auth;
@@ -26,11 +29,9 @@ const requireLogin = (req, res, next) => {
         res.redirect("/login"); // Redirect to the login page
     }
 };
-
-app.get('/', (req: Request, res: Response) => {
-    res.render("index.ejs")
+app.get('/dynamic', (req, res) => {
+    res.render('index', { title: 'Dynamic Page' });
 });
-
 app.get('/login', (req: Request, res: Response) => {
     res.render("login.ejs")
 });
@@ -100,14 +101,15 @@ const progress: Record<ProgressStatus, number> = {
 
 const colors: Record<ProgressStatus, string> = {
     'Order Received': 'bg-gray-500',
-    'Processing': 'bg-blue-500',
-    'In Transit': 'bg-yellow-500',
+    'Processing': 'bg-yellow-700',
+    'In Transit': 'bg-blue-500',
     'Delivered': 'bg-green-500',
 };
 // POST route to handle tracking number submission
 app.post('/tracker', async (req: Request, res: Response) => {
-    const parcelId = req.body.parcelId;
 
+    const parcelId = req.body.parcelId;
+    console.log(parcelId)
     try {
         const parcel = await Parcel.findById(parcelId);
 
